@@ -1,0 +1,9 @@
+{
+    "exclude": [
+        "data",
+        "debug",
+        "outputs",
+        "logs",
+        "checkpoints",
+    ]
+}
