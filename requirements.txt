@@ -1,0 +1,28 @@
+accelerate>=1.1.1
+diffusers>=0.32.1
+easydict
+einops
+fire
+gradio>=5.5.0
+icecream
+imageio>=2.35.1
+imageio-ffmpeg>=0.5.1
+matplotlib
+moviepy>=2.0.0
+numpy==1.26.0
+opencv-contrib-python
+openai>=1.54.0
+peft
+pydantic>=2.10.3
+rp
+scikit-video>=1.1.11
+sentencepiece>=0.2.0
+# torch>=2.5.0
+# torchvision>=0.20.0
+transformers>=4.46.2
+wandb==0.19.9
+decord>=0.6.0
+yt-dlp
+pyequilib
+tyro
+torchmetrics[image]

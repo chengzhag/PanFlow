@@ -1,0 +1,64 @@
+# Equirectangular model for RICOH THETA S
+
+Camera:
+  name: "Insta360 X4"
+  setup: "monocular"
+  model: "equirectangular"
+
+  fps: 24.0
+  cols: 1280
+  rows: 720
+
+  color_order: "RGB"
+
+Preprocessing:
+  min_size: 720
+  mask_rectangles:
+    - [0.0, 1.0, 0.0, 0.1]
+    - [0.0, 1.0, 0.84, 1.0]
+
+Feature:
+  name: "default ORB feature extraction setting"
+  scale_factor: 1.2
+  num_levels: 8
+  ini_fast_threshold: 20
+  min_fast_threshold: 7
+
+Mapping:
+  backend: "g2o"
+  baseline_dist_thr_ratio: 0.02  
+  redundant_obs_ratio_thr: 0.95
+  num_covisibilities_for_landmark_generation: 20
+  num_covisibilities_for_landmark_fusion: 20
+  residual_deg_thr: 0.4
+
+Tracking:
+  backend: "g2o"
+  enable_auto_relocalization: true
+  enable_temporal_keyframe_only_tracking: false  # enable for more robust but less accurate tracking
+
+LoopDetector:
+  backend: "g2o"
+  enabled: false
+  reject_by_graph_distance: true
+  min_distance_on_graph: 50
+
+GraphOptimizer:
+  min_num_shared_lms: 200
+
+GlobalOptimizer:
+  thr_neighbor_keyframes: 100
+
+System:
+  map_format: "msgpack"
+  num_grid_cols: 96
+  num_grid_rows: 48
+
+KeyframeInserter:
+  wait_for_local_bundle_adjustment: true
+  max_interval: 1.
+  lms_ratio_thr_almost_all_lms_are_tracked: 0.9
+  lms_ratio_thr_view_changed: 0.8
+
+Initializer:
+  parallax_deg_threshold: 1.
