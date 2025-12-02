@@ -3,7 +3,7 @@
 ### PanFlow: Decoupled Motion Control for Panoramic Video Generation
 Cheng Zhang, Hanwen Liang, Donny Y. Chen, Qianyi Wu, Konstantinos N. Plataniotis, Camilo Cruz Gambardella, Jianfei Cai
 
-### [Paper]() | [Video](https://www.youtube.com/watch?v=sFTWwlHjNtg) | [Data](https://huggingface.co/datasets/chengzhag/PanFlow)
+### [Paper](https://arxiv.org/abs/2512.00832) | [Video](https://www.youtube.com/watch?v=sFTWwlHjNtg) | [Data](https://huggingface.co/datasets/chengzhag/PanFlow)
 
 ## 🚀 TLDR
 
