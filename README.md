@@ -71,13 +71,13 @@ WANDB_RUN_ID=u95jgv9e python -m demo.demo --demo-name editing --noise_alpha 0.5
 
 ## 📂 Full Dataset
 
-Download the camera pose annotations for 300k clips from [here](https://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQBi6d8K7FUbQah5iEnZEZVcAX211fltE7Mq9LPiwMmb3F0?e=aXHFeZ) and unpack it into `data/360-1M/slam_pose/`.
-
-We then generate latent and noise cache for the filtered subset to speed up training. Please download it from [huggingface](https://huggingface.co/datasets/chengzhag/PanFlow) to `data/360-1M/cache/` by:
+We generate latent and noise cache for the filtered subset to speed up training. Please download them from [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow) to `data/PanFlow/` by:
 
 ```bash
 huggingface-cli download chengzhag/PanFlow --repo-type dataset --local-dir data/PanFlow
 ```
+
+This also include pose and meta information for full 360-1M dataset.
 
 <details>
 <summary>Alternatively, you can also download the 360-1M videos we filtered to generate your own cache.</summary>
@@ -88,10 +88,12 @@ python -m tools.download_360_1m
 
 This script is adapted from [360-1M](https://github.com/MattWallingford/360-1M). Due to the consistent changes in yt-dlp's downloading mechanism to comply with YouTube's anti-scraping mechanism, the script may require some adjustments from time to time.
 
+The cache will be generated automatically during training if not found in the `data/PanFlow/cache/` folder.
+
 </details>
 <br>
 
-If you want to go through the data curation process by yourself, please follow the steps in [`/curation`](/curation). This will end up with 24k [metadata](https://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQD4cMOEcAcMQbuY5NEmhfn2AerzskjXrl75VB35o8_nerI?e=G2345Y) for 400k clips.
+If you want to go through the data curation process by yourself, please follow the steps in [`/curation`](/curation). This will end up with 24k [metadata](https://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQD4cMOEcAcMQbuY5NEmhfn2AerzskjXrl75VB35o8_nerI?e=G2345Y) and corresponding [poses](ttps://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQBi6d8K7FUbQah5iEnZEZVcAX211fltE7Mq9LPiwMmb3F0?e=aXHFeZ) for 400k clips. They are already included in the [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow) dataset (`meta` and `slam_pose` folders) and are needed for cache generation and training.
 
 ## 🎯 Training and Evaluation
 
