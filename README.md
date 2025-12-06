@@ -51,7 +51,7 @@ Download our finetuned LoRA weights from [here](https://monashuni-my.sharepoint.
 
 ### Toy Dataset
 
-Download the toy dataset from [here](https://monashuni-my.sharepoint.com/:f:/g/personal/cheng_zhang_monash_edu/IgD_BVrZKrXfTY8lJ_FliYjxAavs5jTJycK1p7RVNEkDjLE?e=ZMzQCV) and put it in `data/360-1M/` folder. The demo videos are from [360-1M](https://github.com/MattWallingford/360-1M), sourced from YouTube, licensed under CC BY 4.0.
+Download the toy dataset from [OneDrive](https://monashuni-my.sharepoint.com/:f:/g/personal/cheng_zhang_monash_edu/IgD_BVrZKrXfTY8lJ_FliYjxAavs5jTJycK1p7RVNEkDjLE?e=ZMzQCV) or [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow-demo) and put it in `data/360-1M/` folder. The demo videos are from [360-1M](https://github.com/MattWallingford/360-1M), sourced from YouTube, licensed under CC BY 4.0.
 
 ### Motion Transfer Demo
 
