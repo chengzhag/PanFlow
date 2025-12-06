@@ -123,3 +123,9 @@ If you find our work helpful, please consider citing:
   year={2026}
 }
 ```
+
+## 💡 Acknowledgements
+
+Our paper cannot be completed without the amazing open-source projects [CogVideo](https://github.com/zai-org/CogVideo), [Go-with-the-Flow](https://github.com/Eyeline-Labs/Go-with-the-Flow), [stella_vslam](https://github.com/stella-cv/stella_vslam), [PySceneDetect](https://github.com/Breakthrough/PySceneDetect)...
+
+Also check out our Pan-Series works [PanFusion](https://github.com/chengzhag/PanFusion) and [PanSplat](https://github.com/chengzhag/PanSplat) towards 3D scene generation with panoramic images!
