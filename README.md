@@ -110,3 +110,16 @@ WANDB_RUN_ID=<u95jgv9e_or_your_id_here> python -m finetune.evaluate --num-test-s
 ```
 
 This evaluation script computes metrics except Q-Align scores. The results will be logged to `logs/<WANDB_RUN_ID>/checkpoints/360-1M/`.
+
+## 📖 Citation
+
+If you find our work helpful, please consider citing:
+
+```bibtex
+@inproceedings{zhang2025panflow,
+  title={PanFlow: Decoupled Motion Control for Panoramic Video Generation},
+  author={Zhang, Cheng and Liang, Hanwen and Chen, Donny Y and Wu, Qianyi and Plataniotis, Konstantinos N and Gambardella, Camilo Cruz and Cai, Jianfei},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  year={2026}
+}
+```
