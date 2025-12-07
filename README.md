@@ -9,15 +9,21 @@ Cheng Zhang, Hanwen Liang, Donny Y. Chen, Qianyi Wu, Konstantinos N. Plataniotis
 
 PanFlow is a framework for controllable 360° panoramic video generation that decouples motion input into two interpretable components: rotation flow and derotated flow.
 
-<img src="images/flow.png" alt="flow" width="400">
+<p align="center">
+  <img src="images/flow.png" alt="flow" width="400">
+</p>
 
 By conditioning diffusion on spherical-warped motion noise, PanFlow enables precise motion control, produces loop-consistent panoramas, and supports applications such as motion transfer:
 
-<img src="images/transfer.gif" alt="flow" width="860">
+<p align="center">
+  <img src="images/transfer.gif" alt="flow" width="860">
+</p>
 
 and panoramic video editing:
 
-<img src="images/editing.gif" alt="flow" width="860">
+<p align="center">
+  <img src="images/editing.gif" alt="flow" width="860">
+</p>
 
 
 
