@@ -57,7 +57,7 @@ Download our finetuned LoRA weights from [here](https://monashuni-my.sharepoint.
 
 ### Toy Dataset
 
-Download the toy dataset from [OneDrive](https://monashuni-my.sharepoint.com/:f:/g/personal/cheng_zhang_monash_edu/IgD_BVrZKrXfTY8lJ_FliYjxAavs5jTJycK1p7RVNEkDjLE?e=ZMzQCV) or [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow-demo) and put it in `data/360-1M/` folder. The demo videos are from [360-1M](https://github.com/MattWallingford/360-1M), sourced from YouTube, licensed under CC BY 4.0.
+Download the toy dataset from [OneDrive](https://monashuni-my.sharepoint.com/:f:/g/personal/cheng_zhang_monash_edu/IgD_BVrZKrXfTY8lJ_FliYjxAavs5jTJycK1p7RVNEkDjLE?e=ZMzQCV) or [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow-demo) and put it in `data/PanFlow/` folder. The demo videos are from [360-1M](https://github.com/MattWallingford/360-1M), sourced from YouTube, licensed under CC BY 4.0.
 
 ### Motion Transfer Demo
 
@@ -83,7 +83,13 @@ We generate latent and noise cache for the filtered subset to speed up training.
 huggingface-cli download chengzhag/PanFlow --repo-type dataset --local-dir data/PanFlow
 ```
 
-This also include pose and meta information for full 360-1M dataset.
+This also include pose and meta information for full PanFlow dataset. Please decompress the tar.gz files in `data/PanFlow/`:
+
+```bash
+cd data/PanFlow
+tar -xzvf meta.tar.gz
+tar -xzvf slam_pose.tar.gz
+```
 
 <details>
 <summary>Alternatively, you can also download the 360-1M videos we filtered to generate your own cache.</summary>
@@ -99,7 +105,7 @@ The cache will be generated automatically during training if not found in the `d
 </details>
 <br>
 
-If you want to go through the data curation process by yourself, please follow the steps in [`/curation`](/curation). This will end up with 24k [metadata](https://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQD4cMOEcAcMQbuY5NEmhfn2AerzskjXrl75VB35o8_nerI?e=G2345Y) and corresponding [poses](ttps://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQBi6d8K7FUbQah5iEnZEZVcAX211fltE7Mq9LPiwMmb3F0?e=aXHFeZ) for 400k clips. They are already included in the [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow) dataset (`meta` and `slam_pose` folders) and are needed for cache generation and training.
+If you want to download the full videos or go through the data curation process by yourself, please follow the steps in [`/curation`](/curation). This will end up with 24k [metadata](https://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQD4cMOEcAcMQbuY5NEmhfn2AerzskjXrl75VB35o8_nerI?e=G2345Y) and corresponding [poses](ttps://monashuni-my.sharepoint.com/:u:/g/personal/cheng_zhang_monash_edu/IQBi6d8K7FUbQah5iEnZEZVcAX211fltE7Mq9LPiwMmb3F0?e=aXHFeZ) for 400k clips. They are already included in the [Hugging Face](https://huggingface.co/datasets/chengzhag/PanFlow) dataset (`meta` and `slam_pose` folders) and are needed for cache generation and training.
 
 ## 🎯 Training and Evaluation
 
@@ -117,7 +123,7 @@ Run the following command to evaluate the model:
 WANDB_RUN_ID=<u95jgv9e_or_your_id_here> python -m finetune.evaluate --num-test-samples 100
 ```
 
-This evaluation script computes metrics except Q-Align scores. The results will be logged to `logs/<WANDB_RUN_ID>/checkpoints/360-1M/`.
+This evaluation script computes metrics except Q-Align scores. The results will be logged to `logs/<WANDB_RUN_ID>/PanFlow/`.
 
 ## 📖 Citation
 

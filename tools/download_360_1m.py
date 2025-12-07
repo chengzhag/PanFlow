@@ -73,9 +73,9 @@ def download_video(
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Download YouTube videos from a parquet file.")
-    parser.add_argument('--in_path', default="data/360-1M/filter_clips/", type=str)
+    parser.add_argument('--in_path', default="data/PanFlow/filter_clips/", type=str)
     parser.add_argument('--splits', default=["train", "test"], nargs='+', type=str)
-    parser.add_argument('--out_dir', default="data/360-1M/videos/", type=str)
+    parser.add_argument('--out_dir', default="data/PanFlow/videos/", type=str)
     
     args = parser.parse_args()
 

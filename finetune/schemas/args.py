@@ -56,7 +56,7 @@ class BaseArgs(TyroArgs):
 class DataArgs(TyroArgs):
     train_dataset: Literal["PanFlowDataset", "Web360Dataset"] = "PanFlowDataset"
     test_dataset: Literal["PanFlowDataset", "Web360Dataset"] = "PanFlowDataset"
-    data_root: Path = Path("data/360-1M")
+    data_root: Path = Path("data/PanFlow")
     caption_prefix: str = "A 360 panorama video, "
     seed: int | None = 42
     num_workers: int = 4

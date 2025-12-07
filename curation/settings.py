@@ -16,7 +16,7 @@ else:
     SCHEDULER = "local"
 
 args = {
-    "data_root": Path("data/360-1M/"),
+    "data_root": Path("data/PanFlow/"),
     "debug_root": Path("debug"),
     "stella_vslam_path": Path("~/lib/stella_vslam_examples/build/run_video_slam").expanduser(),
     "fbow_path": Path("~/lib/stella_vslam_examples/build/orb_vocab.fbow").expanduser(),

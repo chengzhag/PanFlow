@@ -278,8 +278,7 @@ curl -sL "https://github.com/stella-cv/FBoW_orb_vocab/raw/main/orb_vocab.fbow" -
 Follow [360-1M](https://github.com/MattWallingford/360-1M) to download the [Filtered Subset](https://huggingface.co/datasets/mwallingford/360-1M/blob/main/Filtered_24k.parquet) to `Filtered_24k.parquet`. Then run the following command to download the videos:
 
 ```bash
-cd 360-1M
-python download_local.py --in_path Filtered_24k.parquet --out_dir ../data/360-1M/videos/
+python download_local.py --in_path Filtered_24k.parquet --out_dir ../data/PanFlow/videos/
 ```
 
 This script is adapted from [360-1M](https://github.com/MattWallingford/360-1M). Due to the consistent changes in yt-dlp's downloading mechanism to comply with YouTube's anti-scraping mechanism, the script may require some adjustments from time to time. Total size is around 1 TB.
@@ -290,7 +289,7 @@ Adapt `hpc_curation.py` as needed for your cluster environment. Then run the fol
 ```bash
 python hpc_curation.py --steps video_check format_check detect_scenes slam_clips motion_score
 ```
-We recommend running this step on a cluster with multiple CPU cores. Alternatively, you can run it with `batch_curation.py` on local machine, but it will be much slower. This will output the metadata of the detected clips to `data/360-1M/meta/`.
+We recommend running this step on a cluster with multiple CPU cores. Alternatively, you can run it with `batch_curation.py` on local machine, but it will be much slower. This will output the metadata of the detected clips to `data/PanFlow/meta/`.
 
 ### Watermark Score
 
@@ -298,7 +297,7 @@ Run the following command on local machine to compute the watermark score for ea
 ```bash
 python batch_curation.py --steps watermark_score
 ```
-We recommend running this step on a local machine with a GPU. This step will update the watermark score for each clip to `data/360-1M/meta/`.
+We recommend running this step on a local machine with a GPU. This step will update the watermark score for each clip to `data/PanFlow/meta/`.
 
 ### Pose Estimation
 
@@ -306,7 +305,7 @@ Run the following command on the cluster to estimate the camera pose for each cl
 ```bash
 python hpc_curation.py --steps slam_pose
 ```
-We recommend running this step on a cluster with multiple CPU cores. This step will output the camera pose for each clip to `data/360-1M/slam_pose/` and update the metadata in `data/360-1M/meta/`.
+We recommend running this step on a cluster with multiple CPU cores. This step will output the camera pose for each clip to `data/PanFlow/slam_pose/` and update the metadata in `data/PanFlow/meta/`.
 
 ### Filter Clips
 
@@ -314,8 +313,8 @@ Run the following command on local machine to filter the clips.
 ```bash
 python filter_clips.py
 ```
-This will output the metadata of the filtered data to `data/360-1M/filter_clips/`.
+This will output the metadata of the filtered data to `data/PanFlow/filter_clips/`.
 
 ### Caption
 
-We use the official tool of [CogVideo](https://github.com/zai-org/CogVideo/tree/main/tools/caption) to generate captions for each clip. Please follow their instructions to set up the environment and adapt their script to add generated captions to the metadata files in `data/360-1M/filter_clips/`.
+We use the official tool of [CogVideo](https://github.com/zai-org/CogVideo/tree/main/tools/caption) to generate captions for each clip. Please follow their instructions to set up the environment and adapt their script to add generated captions to the metadata files in `data/PanFlow/filter_clips/`.

@@ -21,7 +21,7 @@ OUTPUT_ARGS=(
 
 # Data Configuration
 DATA_ARGS=(
-    # --data-root "data/360-1M"
+    # --data-root "data/PanFlow"
     # --num-validation-samples "3"
     --derotation "yes"
 )
