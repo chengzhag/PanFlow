@@ -281,7 +281,9 @@ Follow [360-1M](https://github.com/MattWallingford/360-1M) to download the [Filt
 python download_local.py --in_path Filtered_24k.parquet --out_dir ../data/PanFlow/videos/
 ```
 
-This script is adapted from [360-1M](https://github.com/MattWallingford/360-1M). Due to the consistent changes in yt-dlp's downloading mechanism to comply with YouTube's anti-scraping mechanism, the script may require some adjustments from time to time. Total size is around 1 TB.
+This script is adapted from [360-1M](https://github.com/MattWallingford/360-1M). Due to the consistent changes in yt-dlp's downloading mechanism to comply with YouTube's anti-scraping mechanism, the script may require some adjustments from time to time.
+
+Alternatively, you can download the videos from [Hugging Face](https://huggingface.co/datasets/chengzhag/360-1M-720P) and decompress them into `../data/PanFlow/videos/`. Total size is around 1 TB.
 
 ### Clip Detection
 
