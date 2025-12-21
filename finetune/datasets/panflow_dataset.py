@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # test_dataset(
     #     cls = PanFlowDataset,
     #     args = TestDataArgs(
-    #         data_root = Path("data/360-1M/"),
+    #         data_root = Path("data/PanFlow/"),
     #         derotation = "no",
     #         demo_name = "editing",
     #     ),
@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # test_dataset(
     #     cls = PanFlowDataset,
     #     args = TestDataArgs(
-    #         data_root = Path("data/360-1M/"),
+    #         data_root = Path("data/PanFlow/"),
     #         derotation = "no",
     #         demo_name = "motion_transfer",
     #     ),
@@ -44,6 +44,6 @@ if __name__ == "__main__":
     test_dataset(
         cls = PanFlowDataset,
         args = TestDataArgs(
-            data_root = Path("data/360-1M/"),
+            data_root = Path("data/PanFlow/"),
         ),
     )
